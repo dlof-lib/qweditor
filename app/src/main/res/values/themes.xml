@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.QWEditor" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/qw_accent</item>
+        <item name="colorPrimaryDark">@color/qw_bg</item>
+        <item name="colorAccent">@color/qw_accent</item>
+        <item name="colorSurface">@color/qw_bg_light</item>
+        <item name="colorOnSurface">@color/qw_text</item>
+        <item name="android:windowBackground">@color/qw_bg</item>
+        <item name="android:statusBarColor">@color/qw_bg_light</item>
+    </style>
+</resources>
