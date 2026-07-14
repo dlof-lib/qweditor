@@ -15,4 +15,8 @@
     <color name="qw_tag">#4EC9B0</color>
 
     <color name="qw_danger">#EF5350</color>
+
+    <!-- عناصر واجهة إضافية -->
+    <color name="qw_card_stroke">#1FFFFFFF</color>
+    <color name="qw_divider">#26FFFFFF</color>
 </resources>
