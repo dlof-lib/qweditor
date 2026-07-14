@@ -38,6 +38,12 @@
     <string name="sort_type">النوع</string>
     <string name="toast_duplicated">تم إنشاء نسخة</string>
 
+    <!-- دعم ملفات DLoF (.dlofpkg) -->
+    <string name="dlof_required_title">تطبيق DLoF غير مثبت</string>
+    <string name="dlof_required_message">يجب تثبيت تطبيق DLoF الرسمي لفتح وتشغيل هذا الملف.</string>
+    <string name="dlof_required_get_app">تثبيت DLoF</string>
+    <string name="toast_dlof_open_failed">تعذر فتح الملف في تطبيق DLoF</string>
+
     <!-- المحرر -->
     <string name="hint_search">بحث...</string>
     <string name="hint_replace">استبدال بـ...</string>
