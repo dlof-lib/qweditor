@@ -13,6 +13,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/qw_bg_light"
         android:titleTextColor="@color/qw_text"
+        android:elevation="3dp"
         app:title="@string/app_name" />
 
     <HorizontalScrollView
@@ -30,6 +31,7 @@
             android:paddingBottom="10dp"
             android:textColor="@color/qw_accent"
             android:textSize="13sp"
+            android:textStyle="bold"
             android:singleLine="true"
             tools:text="المشروع / assets" />
     </HorizontalScrollView>
@@ -38,14 +40,21 @@
         android:id="@+id/searchBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/bg_file_item"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_search_pill"
         android:hint="@string/hint_search_files"
         android:textColorHint="@color/qw_text_secondary"
         android:textColor="@color/qw_text"
-        android:padding="12dp"
+        android:textSize="14.5sp"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawableTint="@color/qw_text_secondary"
+        android:drawablePadding="10dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
         android:singleLine="true"
         android:inputType="text" />
 
@@ -81,6 +90,7 @@
             android:contentDescription="@string/cd_new_file"
             android:src="@android:drawable/ic_input_add"
             app:backgroundTint="@color/qw_accent"
+            app:elevation="6dp"
             app:tint="#FFFFFF" />
 
     </FrameLayout>
