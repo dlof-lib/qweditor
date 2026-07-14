@@ -88,6 +88,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
             return new LangIcon("📁", R.color.lang_folder, android.R.color.white);
         }
         String name = file.getName().toLowerCase(Locale.ROOT);
+        if (name.endsWith(".dlofpkg")) return new LangIcon("∞", R.color.lang_dlof, android.R.color.white);
         if (name.endsWith(".py")) return new LangIcon("PY", R.color.lang_python, android.R.color.white);
         if (name.endsWith(".html") || name.endsWith(".htm")) return new LangIcon("<>", R.color.lang_html, android.R.color.white);
         if (name.endsWith(".css")) return new LangIcon("#", R.color.lang_css, android.R.color.white);
@@ -108,7 +109,11 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
 
         holder.fileIcon.setText(icon.label);
         holder.fileIcon.setTextColor(ContextCompat.getColor(ctx, icon.textColorRes));
-        holder.fileIcon.setTextSize(icon.label.length() > 2 ? 11f : (file.isDirectory() ? 18f : 14f));
+        if (icon.label.equals("∞")) {
+            holder.fileIcon.setTextSize(20f);
+        } else {
+            holder.fileIcon.setTextSize(icon.label.length() > 2 ? 11f : (file.isDirectory() ? 18f : 14f));
+        }
         ViewCompat.setBackgroundTintList(
                 holder.fileIcon,
                 ColorStateList.valueOf(ContextCompat.getColor(ctx, icon.colorRes)));
