@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QW Editor</string>
+
+    <!-- الشاشة الرئيسية -->
+    <string name="hint_search_files">ابحث عن ملف أو مجلد...</string>
+    <string name="empty_no_files">لا توجد ملفات بعد. اضغط + لإنشاء ملف جديد</string>
+    <string name="empty_no_results">لا توجد نتائج مطابقة</string>
+    <string name="cd_new_file">ملف جديد</string>
+    <string name="dialog_new_title">إنشاء جديد</string>
+    <string name="hint_file_name">مثال: index.html أو script.py</string>
+    <string name="action_new_file">ملف جديد</string>
+    <string name="action_new_folder">مجلد جديد</string>
+    <string name="dialog_new_folder_title">مجلد جديد</string>
+    <string name="hint_folder_name">اسم المجلد</string>
+    <string name="action_create">إنشاء</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="error_empty_name">أدخل اسمًا صالحًا</string>
+    <string name="error_name_exists">الاسم موجود مسبقًا</string>
+    <string name="error_generic">حدث خطأ: %1$s</string>
+    <string name="dialog_delete_title">حذف</string>
+    <string name="dialog_delete_message">هل تريد حذف \"%1$s\"؟ لا يمكن التراجع عن هذا الإجراء.</string>
+    <string name="action_delete">حذف</string>
+    <string name="dialog_rename_title">إعادة تسمية</string>
+    <string name="action_save">حفظ</string>
+    <string name="toast_renamed">تمت إعادة التسمية</string>
+    <string name="toast_rename_failed">فشلت إعادة التسمية</string>
+    <string name="menu_open">فتح</string>
+    <string name="menu_rename">إعادة تسمية</string>
+    <string name="menu_delete">حذف</string>
+    <string name="menu_duplicate">نسخ</string>
+    <string name="menu_details">تفاصيل</string>
+    <string name="action_more">المزيد</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="action_sort">ترتيب حسب</string>
+    <string name="sort_name">الاسم</string>
+    <string name="sort_date">تاريخ التعديل</string>
+    <string name="sort_type">النوع</string>
+    <string name="toast_duplicated">تم إنشاء نسخة</string>
+
+    <!-- المحرر -->
+    <string name="hint_search">بحث...</string>
+    <string name="hint_replace">استبدال بـ...</string>
+    <string name="action_find">بحث</string>
+    <string name="action_preview">معاينة</string>
+    <string name="action_zoom_in">تكبير الخط</string>
+    <string name="action_zoom_out">تصغير الخط</string>
+    <string name="action_share">مشاركة</string>
+    <string name="action_undo">تراجع</string>
+    <string name="action_redo">إعادة</string>
+    <string name="action_word_wrap">التفاف الأسطر</string>
+    <string name="cd_prev_match">السابق</string>
+    <string name="cd_next_match">التالي</string>
+    <string name="cd_close_find">إغلاق</string>
+    <string name="cd_replace">استبدال</string>
+    <string name="cd_replace_all">الكل</string>
+    <string name="toast_saved">تم الحفظ</string>
+    <string name="toast_save_failed">فشل الحفظ: %1$s</string>
+    <string name="toast_no_more_undo">لا يوجد المزيد للتراجع</string>
+    <string name="toast_no_more_redo">لا يوجد المزيد للإعادة</string>
+    <string name="toast_replaced">تم الاستبدال</string>
+    <string name="share_via">مشاركة عبر</string>
+    <string name="unsaved_marker">•</string>
+
+    <!-- المعاينة -->
+    <string name="preview_title">معاينة مباشرة</string>
+
+    <!-- الإعدادات -->
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_theme">مظهر التطبيق</string>
+    <string name="theme_light">فاتح</string>
+    <string name="theme_dark">داكن</string>
+    <string name="theme_system">حسب النظام</string>
+    <string name="settings_font_size">حجم خط المحرر</string>
+    <string name="settings_word_wrap">التفاف الأسطر تلقائيًا</string>
+    <string name="settings_tab_size">حجم المسافة البادئة (Tab)</string>
+    <string name="settings_auto_save">الحفظ التلقائي عند الخروج</string>
+    <string name="settings_about">حول التطبيق</string>
+    <string name="settings_about_text">QW Editor — محرر أكواد بسيط واحترافي لأجهزة أندرويد، يدعم تلوين الصياغة للعديد من اللغات، البحث والاستبدال، معاينة HTML مباشرة، وإدارة كاملة للملفات والمجلدات.</string>
+    <string name="settings_version">الإصدار %1$s</string>
+</resources>
