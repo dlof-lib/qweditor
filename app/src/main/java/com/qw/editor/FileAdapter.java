@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -70,16 +71,25 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         return size + " • " + when;
     }
 
-    /** وصف أيقونة اللغة: النص المعروض داخل الشارة، لون الخلفية، ولون النص. */
+    /** وصف أيقونة اللغة: إمّا شارة نصية ملوّنة، أو أيقونة رسومية حقيقية (drawableRes). */
     private static final class LangIcon {
         final String label;
         final int colorRes;
         final int textColorRes;
+        final int drawableRes;
 
         LangIcon(String label, int colorRes, int textColorRes) {
             this.label = label;
             this.colorRes = colorRes;
             this.textColorRes = textColorRes;
+            this.drawableRes = 0;
+        }
+
+        LangIcon(int drawableRes) {
+            this.label = null;
+            this.colorRes = 0;
+            this.textColorRes = 0;
+            this.drawableRes = drawableRes;
         }
     }
 
@@ -88,7 +98,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
             return new LangIcon("📁", R.color.lang_folder, android.R.color.white);
         }
         String name = file.getName().toLowerCase(Locale.ROOT);
-        if (name.endsWith(".dlofpkg")) return new LangIcon("∞", R.color.lang_dlof, android.R.color.white);
+        if (name.endsWith(".dlofpkg")) return new LangIcon(R.drawable.ic_dlof_file);
         if (name.endsWith(".py")) return new LangIcon("PY", R.color.lang_python, android.R.color.white);
         if (name.endsWith(".html") || name.endsWith(".htm")) return new LangIcon("<>", R.color.lang_html, android.R.color.white);
         if (name.endsWith(".css")) return new LangIcon("#", R.color.lang_css, android.R.color.white);
@@ -107,13 +117,18 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         Context ctx = holder.itemView.getContext();
         LangIcon icon = langIconFor(file);
 
+        if (icon.drawableRes != 0) {
+            holder.fileIcon.setVisibility(View.GONE);
+            holder.fileIconImage.setVisibility(View.VISIBLE);
+            holder.fileIconImage.setImageResource(icon.drawableRes);
+            return;
+        }
+
+        holder.fileIconImage.setVisibility(View.GONE);
+        holder.fileIcon.setVisibility(View.VISIBLE);
         holder.fileIcon.setText(icon.label);
         holder.fileIcon.setTextColor(ContextCompat.getColor(ctx, icon.textColorRes));
-        if (icon.label.equals("∞")) {
-            holder.fileIcon.setTextSize(20f);
-        } else {
-            holder.fileIcon.setTextSize(icon.label.length() > 2 ? 11f : (file.isDirectory() ? 18f : 14f));
-        }
+        holder.fileIcon.setTextSize(icon.label.length() > 2 ? 11f : (file.isDirectory() ? 18f : 14f));
         ViewCompat.setBackgroundTintList(
                 holder.fileIcon,
                 ColorStateList.valueOf(ContextCompat.getColor(ctx, icon.colorRes)));
@@ -126,12 +141,14 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
 
     static class FileViewHolder extends RecyclerView.ViewHolder {
         TextView fileName, fileIcon, fileMeta;
+        ImageView fileIconImage;
         ImageButton btnMore;
 
         FileViewHolder(@NonNull View itemView) {
             super(itemView);
             fileName = itemView.findViewById(R.id.fileName);
             fileIcon = itemView.findViewById(R.id.fileIcon);
+            fileIconImage = itemView.findViewById(R.id.fileIconImage);
             fileMeta = itemView.findViewById(R.id.fileMeta);
             btnMore = itemView.findViewById(R.id.btnMore);
         }
