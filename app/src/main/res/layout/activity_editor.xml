@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/qw_bg_light"
-        android:titleTextColor="@color/qw_text" />
+        android:titleTextColor="@color/qw_text"
+        android:elevation="3dp" />
 
     <!-- شريط البحث والاستبدال -->
     <LinearLayout
@@ -101,15 +102,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="6dp">
+            android:padding="8dp">
 
-            <Button android:id="@+id/btnTab" style="?android:attr/buttonStyleSmall" android:text="Tab" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-            <Button android:id="@+id/btnBrace" style="?android:attr/buttonStyleSmall" android:text="{ }" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-            <Button android:id="@+id/btnParen" style="?android:attr/buttonStyleSmall" android:text="( )" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-            <Button android:id="@+id/btnQuote" style="?android:attr/buttonStyleSmall" android:text="&quot; &quot;" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-            <Button android:id="@+id/btnSemi" style="?android:attr/buttonStyleSmall" android:text=";" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-            <Button android:id="@+id/btnUndo" style="?android:attr/buttonStyleSmall" android:text="↺" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-            <Button android:id="@+id/btnRedo" style="?android:attr/buttonStyleSmall" android:text="↻" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <Button android:id="@+id/btnTab" style="@style/QwQuickAction" android:text="Tab"/>
+            <Button android:id="@+id/btnBrace" style="@style/QwQuickAction" android:text="{ }"/>
+            <Button android:id="@+id/btnParen" style="@style/QwQuickAction" android:text="( )"/>
+            <Button android:id="@+id/btnQuote" style="@style/QwQuickAction" android:text="&quot; &quot;"/>
+            <Button android:id="@+id/btnSemi" style="@style/QwQuickAction" android:text=";"/>
+            <Button android:id="@+id/btnUndo" style="@style/QwQuickAction" android:text="↺"/>
+            <Button android:id="@+id/btnRedo" style="@style/QwQuickAction" android:text="↻"/>
         </LinearLayout>
     </HorizontalScrollView>
 
