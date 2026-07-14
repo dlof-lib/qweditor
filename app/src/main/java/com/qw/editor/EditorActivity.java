@@ -96,6 +96,13 @@ public class EditorActivity extends BaseActivity {
         codeEditor.setTextSize(fontSize);
         lineNumbers.setTextSize(fontSize);
 
+        // Ensure short lines still fill the screen width even though the
+        // EditText's own width is wrap_content (needed so long lines can
+        // scroll horizontally inside hScrollEditor). match_parent isn't a
+        // legal value for android:minWidth in XML, so it's set here instead.
+        int screenWidth = getResources().getDisplayMetrics().widthPixels;
+        codeEditor.setMinWidth(screenWidth);
+
         loadFile();
         setupToolButtons();
         setupTextWatcher();
