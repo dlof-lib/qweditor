@@ -15,4 +15,24 @@
     <color name="qw_tag">#800000</color>
 
     <color name="qw_danger">#D32F2F</color>
+
+    <!-- عناصر واجهة إضافية -->
+    <color name="qw_card_stroke">#14000000</color>
+    <color name="qw_divider">#1F000000</color>
+
+    <!-- ألوان أيقونات اللغات -->
+    <color name="lang_python">#3776AB</color>
+    <color name="lang_html">#E44D26</color>
+    <color name="lang_css">#1572B6</color>
+    <color name="lang_js">#F0DB4F</color>
+    <color name="lang_js_text">#1B1B1B</color>
+    <color name="lang_php">#787CB5</color>
+    <color name="lang_json">#6D6D6D</color>
+    <color name="lang_md">#45596B</color>
+    <color name="lang_java">#F58219</color>
+    <color name="lang_kotlin">#7F52FF</color>
+    <color name="lang_xml">#00979D</color>
+    <color name="lang_c">#5C6BC0</color>
+    <color name="lang_txt">#9AA0A6</color>
+    <color name="lang_folder">#F2A93B</color>
 </resources>
