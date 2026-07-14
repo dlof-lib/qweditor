@@ -147,9 +147,7 @@
                 <EditText
                     android:id="@+id/codeEditor"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="match_parent"
-                    android:minHeight="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@color/qw_bg"
                     android:textColor="@color/qw_text"
                     android:textColorHint="@color/qw_text_secondary"
