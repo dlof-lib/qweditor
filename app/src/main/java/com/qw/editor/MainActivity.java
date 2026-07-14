@@ -1,6 +1,8 @@
 package com.qw.editor;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +30,9 @@ import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends BaseActivity {
+
+    /** اسم حزمة تطبيق DLoF الرسمي (org.dlof.reader) */
+    private static final String DLOF_PACKAGE = "org.dlof.reader";
 
     private RecyclerView recyclerView;
     private TextView emptyText;
@@ -273,10 +279,49 @@ public class MainActivity extends BaseActivity {
         if (file.isDirectory()) {
             currentDir = file;
             refreshFiles();
+        } else if (isDlofPackage(file)) {
+            openWithDlof(file);
         } else {
             Intent intent = new Intent(this, EditorActivity.class);
             intent.putExtra("file_path", file.getAbsolutePath());
             startActivity(intent);
+        }
+    }
+
+    private boolean isDlofPackage(File file) {
+        return file.getName().toLowerCase(Locale.ROOT).endsWith(".dlofpkg");
+    }
+
+    /** يفتح ملف .dlofpkg في تطبيق DLoF الرسمي، أو يطلب تثبيته إن لم يكن موجودًا. */
+    private void openWithDlof(File file) {
+        try {
+            Uri uri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", file);
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(uri, "application/octet-stream");
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            showDlofRequiredDialog();
+        } catch (Exception e) {
+            Toast.makeText(this, R.string.toast_dlof_open_failed, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void showDlofRequiredDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.dlof_required_title)
+                .setMessage(R.string.dlof_required_message)
+                .setPositiveButton(R.string.dlof_required_get_app, (d, w) -> openDlofOnPlayStore())
+                .setNegativeButton(R.string.action_cancel, null)
+                .show();
+    }
+
+    private void openDlofOnPlayStore() {
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + DLOF_PACKAGE)));
+        } catch (ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://play.google.com/store/apps/details?id=" + DLOF_PACKAGE)));
         }
     }
 
