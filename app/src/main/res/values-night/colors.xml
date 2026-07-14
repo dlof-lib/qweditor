@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ألوان الواجهة - الوضع الداكن -->
+    <color name="qw_bg">#1E1E1E</color>
+    <color name="qw_bg_light">#252526</color>
+    <color name="qw_accent">#4FC3F7</color>
+    <color name="qw_text">#D4D4D4</color>
+    <color name="qw_text_secondary">#9DA5B4</color>
+
+    <!-- ألوان تلوين الأكواد -->
+    <color name="qw_keyword">#569CD6</color>
+    <color name="qw_string">#CE9178</color>
+    <color name="qw_comment">#6A9955</color>
+    <color name="qw_number">#B5CEA8</color>
+    <color name="qw_tag">#4EC9B0</color>
+
+    <color name="qw_danger">#EF5350</color>
+</resources>
