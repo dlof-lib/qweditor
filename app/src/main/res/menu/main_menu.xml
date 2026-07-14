@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_sort"
+        android:title="@string/action_sort"
+        android:icon="@android:drawable/ic_menu_sort_alphabetically"
+        app:showAsAction="ifRoom">
+        <menu>
+            <group android:id="@+id/group_sort" android:checkableBehavior="single">
+                <item android:id="@+id/sort_name" android:title="@string/sort_name" android:checked="true" />
+                <item android:id="@+id/sort_date" android:title="@string/sort_date" />
+                <item android:id="@+id/sort_type" android:title="@string/sort_type" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:icon="@android:drawable/ic_menu_manage"
+        app:showAsAction="ifRoom" />
+
+</menu>
